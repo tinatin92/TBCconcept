@@ -1,0 +1,351 @@
+@font-face {
+  font-family: "TBC Contractica";
+  src: url("../assets/fonts/TBCContractica-Bold.woff2") format("woff2"),
+    url("../assets/fonts/TBCContractica-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TBC Contractica CAPS";
+  src: url("../assets/fonts/TBCContracticaCAPS-Light.woff2") format("woff2"),
+    url("../assets/fonts/TBCContracticaCAPS-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TBC Contractica CAPS";
+  src: url("../assets/fonts/TBCContracticaCAPS-Medium.woff2") format("woff2"),
+    url("../assets/fonts/TBCContracticaCAPS-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TBC Contractica CAPS";
+  src: url("../assets/fonts/TBCContracticaCAPS-Bold.woff2") format("woff2"),
+    url("../assets/") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TBC Contractica";
+  src: url("../assets/fonts/TBCContractica-Light.woff2") format("woff2"),
+    url("../assets/fonts/TBCContractica-Light.woff2") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TBC Contractica CAPS";
+  src: url("../assets/fonts/TBCContracticaCAPS-Regular.woff2") format("woff2"),
+    url("../assets/fonts/TBCContracticaCAPS-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TBC Contractica";
+  src: url("../assets/fonts/TBCContractica-Regular.woff") format("woff2"),
+    url("../assets/fonts/TBCContractica-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TBC Contractica";
+  src: url("../assets/fonts/TBCContractica-Medium.woff2") format("woff2"),
+    url("../assets/fonts/TBCContractica-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #f9fafa;
+  line-height: 1.7;
+  font-family: "TBC Contractica";
+  color: #555f62;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "TBC Contractica";
+  margin: 0;
+  padding: 0;
+  border: none;
+  
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+}
+.container {
+  width: 100%;
+  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.padding-60 {
+  padding: 60px 0;
+}
+.title-28 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.title-24{
+    font-size: 24px;
+    font-weight: 700;
+}
+.title-color{
+    color: #141719;
+}
+.heading{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+    display: flex;
+}
+.block {
+  display: block;
+}
+.flex {
+  display: flex;
+}
+.al-center {
+  align-items: center;
+}
+.just-center {
+  justify-content: center;
+}
+
+.globa-layout {
+  padding: 80px 47px 0 47px;
+}
+
+.header {
+  z-index: 100;
+  height: 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #eef1f1;
+  padding-left: 47px;
+  padding-right: 47px;
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: 0;
+}
+.header-content {
+  display: flex;
+  column-gap: 32px;
+  align-items: center;
+}
+.header-nav {
+  height: 100%;
+  grid-column-gap: 32px;
+  flex: 1;
+  align-items: center;
+  margin-left: 40px;
+  margin-right: 40px;
+  display: flex;
+}
+
+.breadcrumbs {
+  font-size: 12px;
+  padding: 24px 0;
+  color: #141719;
+  font-weight: 500;
+}
+
+.hero-section {
+  padding: 32px 0 60px 0;
+}
+.banner {
+  position: relative;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 1);
+  padding: 95px;
+  border-radius: 6px;
+  overflow: hidden;
+  min-height: 360px;
+}
+.banner-content {
+  position: relative;
+  max-width: 540px;
+  z-index: 2;
+}
+.banner-text {
+  margin: 16px 0 24px 0;
+}
+.banner-image {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 1;
+  /*  z-index: -1; */
+}
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.btn {
+  grid-column-gap: 6px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #3295ce;
+  background-image: linear-gradient(15deg, #001682, #3240e5);
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.33;
+  transition: all 0.25s ease-in-out;
+  display: flex;
+  font-family: "TBC Contractica";
+  max-width: 160px;
+}
+.btn:hover {
+  background-image: none;
+  background-color: #3295ce;
+  transition: all 0.25s ease-in-out;
+}
+
+.message p {
+  font-size: 36px;
+  color: #141719;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.grid {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    display: grid;
+  }
+.grid-card {
+    position: relative;
+    background-color: #141719;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+    min-height: 256px;
+   transition-duration: .25s;
+  }
+  .grid-content {
+    height: 100%;
+    grid-row-gap: 20px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 40px;
+    display: flex;
+    position: relative;
+    z-index: 2;
+  }
+  .grid-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: .7;
+  }
+  .grid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-duration: .25s;  
+  }
+  .grid-big {
+    grid-area: span 2 / span 1 / span 2 / span 1;
+  }
+.see-more{
+    grid-column-gap: 6px;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color .25s ease-in-out;
+    display: flex;
+}
+  .see-more a{
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.4;
+    font-weight: 700;
+    display: block;
+    transition-duration: .25s;  
+  }
+  .grid-card:hover .grid-image img {
+    transform: scale(1.03);
+  }
+.see-more svg{
+    transition-duration: .25s;  
+}
+  .see-more:hover a,
+  .see-more:hover svg
+  {
+    text-decoration: none;
+    color: #aeaeae;
+  }
+
+  .number {
+    grid-row-gap: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    padding: 40px 48px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .num {
+    color: #141719;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .number-section {
+    padding: 60px 0;
+  }
+  .numbers {
+    grid-column-gap: 30px;
+    display: flex;
+  }
