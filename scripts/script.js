@@ -29,3 +29,27 @@ document.addEventListener('click', e => {
         document.querySelector('[data-dropdown-big]').classList.remove('highlight');
     }
 });
+
+const swiper = new Swiper('.offer-slider', {
+    slidesPerView: 3,
+    speed: 600,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+    },
+    spaceBetween: 30,
+    slidesPerGroup: 1,
+});
+
+const updateScrollbarWidth = () => {
+    const totalSlides = swiper.slides.length;
+    const visibleSlides = swiper.params.slidesPerView;
+    const dragElement = document.querySelector('.swiper-scrollbar-drag');
+    if (dragElement) {
+        dragElement.style.width = `${(visibleSlides / totalSlides) * 100}%`;
+    }
+};
