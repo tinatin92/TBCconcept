@@ -53,3 +53,6 @@ const updateScrollbarWidth = () => {
         dragElement.style.width = `${(visibleSlides / totalSlides) * 100}%`;
     }
 };
+
+
+
