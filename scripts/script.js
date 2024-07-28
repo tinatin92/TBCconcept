@@ -96,6 +96,8 @@ const burgerIcon = document.querySelector(".burger-icon");
 burgerIcon.addEventListener("click", function () {
   this.classList.toggle("active");
   headerMobile.classList.toggle("open");
+  header.classList.toggle('color')
+
 });
 
 //

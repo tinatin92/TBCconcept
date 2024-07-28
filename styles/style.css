@@ -197,6 +197,9 @@ h2 {
   left: 0;
   right: 0;
 }
+.header.color{
+  background-color: #F9FAFA;
+}
 
 .header-content {
   display: flex;
@@ -313,9 +316,7 @@ h2 {
 .dropdown.active .dropdown-big {
   display: block;
 }
-.swiper-slide {
-  cursor: pointer;
-}
+
 .burger-icon {
   display: none;
 }
@@ -896,7 +897,7 @@ h2 {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  top: -100%;
+  display: none;
   transition: visibility 0.6s, opacity 0.6s;
 }
 .address {
