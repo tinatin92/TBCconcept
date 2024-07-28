@@ -29,28 +29,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-/* const footerToggle = document.querySelectorAll("[data-footer-toggle]");
-const footerDropdown = document.querySelectorAll("[data-footer-dropdown]");
-
-footerToggle.forEach((toggle) => {
-  toggle.addEventListener("click", (e) => {
-    const clickedDropdown = e.target.closest("[data-footer-dropdown]");
-    const nav = clickedDropdown.querySelector(".footer-nav");
-    const isOpen = clickedDropdown.classList.contains("open");
-
-     
-    mobileDropdowns.forEach(dropdown => {
-        dropdown.classList.remove('open');
-        dropdown.querySelector('.header-menu__mobile-nav').style.height = 0;
-    });
-
-    
-    if (!isOpen) {
-        clickedDropdown.classList.add('open');
-        nav.style.height = nav.scrollHeight + 'px';
-    }
-  });
-}); */
 
 //
 
@@ -99,11 +77,6 @@ footerToggles.forEach((toggle) => {
 
 
 
-
-
-
-
-
 //
 
 
@@ -141,6 +114,10 @@ burgerIcon.addEventListener("click", function () {
 
 
 
+
+
+
+
 //
 
 const swiper = new Swiper(".offer-slider", {
@@ -156,6 +133,25 @@ const swiper = new Swiper(".offer-slider", {
   },
   spaceBetween: 30,
   slidesPerGroup: 1,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 15,
+    },
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    992: {
+     
+      spaceBetween: 30,
+    },
+    1440: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    }
+  }
 });
 
 const updateScrollbarWidth = () => {
@@ -166,3 +162,61 @@ const updateScrollbarWidth = () => {
     dragElement.style.width = `${(visibleSlides / totalSlides) * 100}%`;
   }
 };
+
+
+
+///
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const content = document.getElementById('content');
+  const scrollbar = document.getElementById('custom-scrollbar');
+  const thumb = document.getElementById('custom-scroll-thumb');
+
+  // Calculate the height of the thumb based on content height
+  const contentHeight = content.scrollHeight;
+  const viewHeight = content.clientHeight;
+  const thumbHeight = (viewHeight / contentHeight) * viewHeight;
+  thumb.style.height = `${thumbHeight}px`;
+
+  let isDragging = false;
+  let startY = 0;
+  let startTop = 0;
+
+  thumb.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startY = e.clientY;
+    startTop = thumb.offsetTop;
+    document.body.style.userSelect = 'none'; // Prevent text selection
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+
+    const deltaY = e.clientY - startY;
+    const newTop = startTop + deltaY;
+
+    // Ensure the thumb stays within bounds
+    if (newTop < 0) {
+      thumb.style.top = '0px';
+    } else if (newTop + thumb.offsetHeight > scrollbar.offsetHeight) {
+      thumb.style.top = `${scrollbar.offsetHeight - thumb.offsetHeight}px`;
+    } else {
+      thumb.style.top = `${newTop}px`;
+    }
+
+    // Calculate the scroll position of the content
+    const scrollRatio = newTop / (scrollbar.offsetHeight - thumb.offsetHeight);
+    content.scrollTop = scrollRatio * (content.scrollHeight - content.clientHeight);
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    document.body.style.userSelect = 'auto'; // Re-enable text selection
+  });
+
+  content.addEventListener('scroll', () => {
+    const scrollRatio = content.scrollTop / (content.scrollHeight - content.clientHeight);
+    thumb.style.top = `${scrollRatio * (scrollbar.offsetHeight - thumb.offsetHeight)}px`;
+  });
+});

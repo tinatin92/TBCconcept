@@ -17,6 +17,31 @@
   .message p {
     font-size: 32px;
   }
+  .swiper-container{
+    margin-left: -45px;
+    margin-right: -45px;
+    padding-left: 45px;
+    overflow: visible;
+  }
+  .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal{
+    left: 45px;
+    margin-right: 0;
+    width: 100%;
+  }
+  .swiper-nav{
+    display: none;
+
+  }
+  .app-text{
+   row-gap: 20px;
+  }
+
+  .app-image img{
+    width: 100%;
+    max-width: 256px;
+     max-height: 334px;
+    object-fit: cover;
+  }
 }
 @media (max-width: 1200px) {
   .header-nav {
@@ -30,8 +55,14 @@
       padding: 32px 45px;
       overflow-x: hidden;
   }
+  .app-content{
+    padding: 0 45px;
+  }
 }
 @media (max-width: 992px) {
+  #custom-scrollbar{
+    display: none;
+  }
   .header-nav {
     display: none;
   }
@@ -182,8 +213,53 @@
   .globa-layout {
     padding: 80px 45px 0 45px;
   }
+  .app-btn .store{
+    display: none;
+  }
+  .app-btn .download-app{
+    display: flex;
+    padding: 16px 32px 12px 32px;
+    column-gap: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    color: #182cc0;
+    text-transform: uppercase;
+    border: 1px solid #182cc0;
+    transition: background-position .25s ease-in-out;
+    background-color: #f9fafa;
+  }
+ 
+  .download-text{
+    display: flex;
+    align-items: center;
+  }
+  .app-image img{
+    width: 100%;
+    max-width: 206px;
+     max-height: 272px;
+    object-fit: cover;
+  }
+  
 }
 @media (max-width: 768px) {
+
+  .header-logo{
+    display: none;
+
+  }
+  .header_logo-mobile{
+    display: block;
+  }
+  .menu-buttons{
+    column-gap: 8px;
+  }
+  .footer_logo{
+    display: none;
+  }
+.footer_logo-mobile{
+  display: block;
+}
  
   .footer-main-content {
     grid-template-columns: 1fr;
@@ -296,8 +372,153 @@
 .footer-bottom-links{
   order: -1;
 }
-
+.offer-card-content{
+  padding: 20px;
+}
+.offer-card-content h3{
+  font-size: 14px;
+}
+.offer-image{
+  height: 160px;
+}
+.offer-card{
+  min-height: 315px;
 }
 
-@media (max-width: 768px) {
+.offer-text{
+  padding: 20px;
+}
+.offer-text h3{
+  font-size: 14px;
+}
+.offer-text p{
+  font-size: 12px;
+}
+
+.awards-card-content h3{
+  font-size: 14px;
+}
+
+.app-image__mobile{
+  display: block;
+}
+.app-image{
+  display: none;
+}
+.app-image__mobile{
+  display: block;
+ 
+}
+
+.app-image__mobile img {
+  width: 370px;
+  height: 484px;
+  object-fit: cover;
+}
+.app-text {
+  width: 100%;
+  
+}
+.download-app{
+  width: 100%;
+  justify-content: center;
+}
+.app-content {
+  padding: 45px 45px;
+}
+.app-text {
+  row-gap: 24px;
+}
+}
+
+@media (max-width: 480px) {
+  body{
+    font-size: 14px;
+  }
+  .header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .header-menu__mobile-dropdown{
+    padding: 0 15px 32px 15px;
+  }
+  .footer-bottom-content{
+    font-size: 12px;
+  }
+  .globa-layout{
+    padding: 80px 15px 0 15px;
+  }
+  .banner{
+    padding: 172px 15px 20px 15px;
+  }
+  .hero-section {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.title-28 {
+  font-size: 16px;
+}
+.padding-60 {
+  padding: 36px 0;
+}
+.message p {
+  font-size: 24px;
+}
+h2 {
+  font-size: 14px;
+
+}
+.heading {
+  margin-bottom: 20px;
+}
+.see-more a {
+  font-size: 12px;
+}
+.num{
+  font-size: 36px;
+}
+.number{
+  font-size: 14px;
+  padding: 24px;
+}
+.numbers{
+  row-gap: 16px;
+}
+.get-product-link{
+  font-size: 12px;
+}
+
+.swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  bottom: 0px  ;
+}
+
+
+.hero-section {
+  padding: 32px 0 10px 0;
+}
+
+.footer{
+  margin-top: 36px;
+}
+.offer-slider, .awards-slider{
+  padding-bottom: 16px;
+}
+.footer-toggle {
+  font-size: 16px;
+}
+.footer-heading {
+  font-size: 16px;
+}
+.footer-bottom {
+  padding: 24px 45px;
+}
+.footer-bottom-content{
+  row-gap: 24px;
+}
+.footer-toggle{
+  padding: 24px 0;
+}
+.footer-main-content{
+  row-gap: 0;
+}
 }
