@@ -104,7 +104,6 @@ img {
   height: auto;
 }
 
-
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -216,8 +215,7 @@ h2 {
   z-index: 102;
   min-height: 248px;
   background-color: #fff;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 0;
   transition: height 0.6s ease-in-out;
   opacity: 0;
   transition: opacity 0.6s;
@@ -315,6 +313,9 @@ h2 {
 .dropdown.active .dropdown-big {
   display: block;
 }
+.swiper-slide {
+  cursor: pointer;
+}
 .burger-icon {
   display: none;
 }
@@ -328,6 +329,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 .get-product-link {
   column-gap: 6px;
@@ -749,7 +751,7 @@ h2 {
   bottom: 0;
 }
 
- .offer-image__logo{
+.offer-image__logo {
   position: absolute;
   width: 78px;
   height: 56px;
@@ -762,8 +764,8 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
- }
- 
+}
+
 .offer-card:hover .offer-image img {
   top: -2%;
   left: 0;
@@ -860,6 +862,12 @@ h2 {
   color: #555f62;
   transition: color 0.25s ease-in-out;
 }
+.footer-nav a:hover {
+  color: #182cc0;
+}
+.address a:hover {
+  text-decoration: underline;
+}
 .footer-toggle {
   padding-bottom: 24px;
   display: flex;
@@ -949,12 +957,11 @@ h2 {
   display: flex;
   align-items: center;
   width: 21px;
-
 }
-.footer_logo{
+.footer_logo {
   color: #141719;
 }
-.footer_logo-mobile{
+.footer_logo-mobile {
   display: none;
   color: #141719;
 }
@@ -1128,25 +1135,23 @@ h2 {
 .download-app {
   display: none;
 }
-.header_logo-mobile{
+.header_logo-mobile {
   display: none;
 }
 
 #content {
   position: relative;
   height: 100vh;
-  overflow: hidden; 
- 
+  overflow: hidden;
 }
 
 #custom-scrollbar {
   position: absolute;
   top: 80px;
   right: 0;
-  width: 8px; 
+  width: 8px;
   height: calc(100vh - 80px);
   background: #f0f0f0;
-  
 }
 
 #custom-scroll-thumb {
@@ -1154,8 +1159,8 @@ h2 {
   top: 0;
   right: 0;
   width: 100%;
-  height: 50px; 
-  background: #767676; 
+  height: 50px;
+  background: #767676;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -1163,17 +1168,16 @@ h2 {
 #content {
   position: relative;
   height: 100vh;
-  overflow-y: scroll; 
-
+  overflow-y: scroll;
 }
 
 #custom-scrollbar {
   position: absolute;
   top: 80px;
   right: 0;
-  width: 8px; 
+  width: 8px;
   height: calc(100vh - 80px);
-  background: #f0f0f0; 
+  background: #f0f0f0;
 }
 
 #custom-scroll-thumb {
@@ -1181,8 +1185,61 @@ h2 {
   top: 0;
   right: 0;
   width: 100%;
-  height: 50px; 
-  background: #c0c0c0; 
+  height: 50px;
+  background: #c0c0c0;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.cookies-container {
+  z-index: 90;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  top: auto;
+  bottom: 66px;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s;
+}
+.cookies-block {
+  max-width: 730px;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  font-size: 12px;
+  background-color: #fff;
+  box-shadow: 0 36px 40px -15px rgba(12, 43, 67, 0.07);
+  border-radius: 6px;
+}
+.accept-cookies {
+  grid-column-gap: 6px;
+  color: #182cc0;
+  text-transform: uppercase;
+  flex: none;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+  display: flex;
+  cursor: pointer;
+  background-color: transparent;
+}
+.accept-cookies:hover {
+  color: #3295ce;
+}
+.cookies-container.close {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+#cookiescontainer {
+  display: none;
 }

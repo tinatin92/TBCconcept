@@ -29,57 +29,44 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 //
 
-const openButton = document.querySelector('.big-menu__trigger');
-const buttonMenu = document.querySelector('.button-menu');
+const openButton = document.querySelector(".big-menu__trigger");
+const buttonMenu = document.querySelector(".button-menu");
 
-openButton.addEventListener('click', (e) => {
-    e.target.closest('.button-menu').classList.toggle('open');
+openButton.addEventListener("click", (e) => {
+  e.target.closest(".button-menu").classList.toggle("open");
 });
-
-
-
 
 const footerToggles = document.querySelectorAll("[data-footer-toggle]");
 const footerDropdowns = document.querySelectorAll("[data-footer-dropdown]");
 
 footerToggles.forEach((toggle) => {
   toggle.addEventListener("click", (e) => {
-  
     const dropdown = e.target.closest(".footer-dropdown");
     if (!dropdown) return;
 
-   
     const nav = dropdown.querySelector(".footer-nav");
     const isOpen = dropdown.classList.contains("open");
 
-  
-    footerDropdowns.forEach(d => {
-        if (d !== dropdown) {
-            d.classList.remove('open');
-            d.querySelector('.footer-nav').style.height = 0;
-        }
+    footerDropdowns.forEach((d) => {
+      if (d !== dropdown) {
+        d.classList.remove("open");
+        d.querySelector(".footer-nav").style.height = 0;
+      }
     });
 
-    
     if (!isOpen) {
-        dropdown.classList.add('open');
-        nav.style.height = nav.scrollHeight + 'px';
+      dropdown.classList.add("open");
+      nav.style.height = nav.scrollHeight + "px";
     } else {
-        dropdown.classList.remove('open');
-        nav.style.height = 0;
+      dropdown.classList.remove("open");
+      nav.style.height = 0;
     }
   });
 });
 
-
-
-
 //
-
-
 
 const mobileToggles = document.querySelectorAll("[data-mobile-toggle]");
 const mobileDropdowns = document.querySelectorAll("[data-mobile-dropdown]");
@@ -111,13 +98,6 @@ burgerIcon.addEventListener("click", function () {
   headerMobile.classList.toggle("open");
 });
 
-
-
-
-
-
-
-
 //
 
 const swiper = new Swiper(".offer-slider", {
@@ -140,18 +120,18 @@ const swiper = new Swiper(".offer-slider", {
       spaceBetween: 15,
     },
     480: {
-      slidesPerView: 2,
+      slidesPerView: 1.5,
       spaceBetween: 15,
     },
     992: {
-     
+      slidesPerView: 2.5,
       spaceBetween: 30,
     },
     1440: {
       slidesPerView: 3,
       spaceBetween: 30,
-    }
-  }
+    },
+  },
 });
 
 const updateScrollbarWidth = () => {
@@ -163,17 +143,13 @@ const updateScrollbarWidth = () => {
   }
 };
 
-
-
 ///
 
+document.addEventListener("DOMContentLoaded", () => {
+  const content = document.getElementById("content");
+  const scrollbar = document.getElementById("custom-scrollbar");
+  const thumb = document.getElementById("custom-scroll-thumb");
 
-document.addEventListener('DOMContentLoaded', () => {
-  const content = document.getElementById('content');
-  const scrollbar = document.getElementById('custom-scrollbar');
-  const thumb = document.getElementById('custom-scroll-thumb');
-
-  // Calculate the height of the thumb based on content height
   const contentHeight = content.scrollHeight;
   const viewHeight = content.clientHeight;
   const thumbHeight = (viewHeight / contentHeight) * viewHeight;
@@ -183,40 +159,57 @@ document.addEventListener('DOMContentLoaded', () => {
   let startY = 0;
   let startTop = 0;
 
-  thumb.addEventListener('mousedown', (e) => {
+  thumb.addEventListener("mousedown", (e) => {
     isDragging = true;
     startY = e.clientY;
     startTop = thumb.offsetTop;
-    document.body.style.userSelect = 'none'; // Prevent text selection
+    document.body.style.userSelect = "none";
   });
 
-  document.addEventListener('mousemove', (e) => {
+  document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
 
     const deltaY = e.clientY - startY;
     const newTop = startTop + deltaY;
 
-    // Ensure the thumb stays within bounds
     if (newTop < 0) {
-      thumb.style.top = '0px';
+      thumb.style.top = "0px";
     } else if (newTop + thumb.offsetHeight > scrollbar.offsetHeight) {
       thumb.style.top = `${scrollbar.offsetHeight - thumb.offsetHeight}px`;
     } else {
       thumb.style.top = `${newTop}px`;
     }
 
-    // Calculate the scroll position of the content
     const scrollRatio = newTop / (scrollbar.offsetHeight - thumb.offsetHeight);
-    content.scrollTop = scrollRatio * (content.scrollHeight - content.clientHeight);
+    content.scrollTop =
+      scrollRatio * (content.scrollHeight - content.clientHeight);
   });
 
-  document.addEventListener('mouseup', () => {
+  document.addEventListener("mouseup", () => {
     isDragging = false;
-    document.body.style.userSelect = 'auto'; // Re-enable text selection
+    document.body.style.userSelect = "auto";
   });
 
-  content.addEventListener('scroll', () => {
-    const scrollRatio = content.scrollTop / (content.scrollHeight - content.clientHeight);
-    thumb.style.top = `${scrollRatio * (scrollbar.offsetHeight - thumb.offsetHeight)}px`;
+  content.addEventListener("scroll", () => {
+    const scrollRatio =
+      content.scrollTop / (content.scrollHeight - content.clientHeight);
+    thumb.style.top = `${
+      scrollRatio * (scrollbar.offsetHeight - thumb.offsetHeight)
+    }px`;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cookiesContainer = document.getElementById("cookiescontainer");
+  const cookiesButton = document.querySelector(".accept-cookies");
+
+  if (localStorage.getItem("cookiesAccepted") !== "true") {
+    cookiesContainer.style.display = "block";
+  }
+
+  cookiesButton.addEventListener("click", (e) => {
+    e.target.closest(".cookies-container").classList.add("close");
+
+    localStorage.setItem("cookiesAccepted", "true");
   });
 });
